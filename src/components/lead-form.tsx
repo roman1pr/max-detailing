@@ -104,7 +104,7 @@ export function LeadForm({
               required
               value={service}
               onChange={(e) => setService(e.target.value)}
-              placeholder="Мойка Detailing, полировка, химчистка"
+              placeholder="Полировка, керамика, химчистка"
               className="field"
             />
           </label>
@@ -153,7 +153,7 @@ export function LeadForm({
         </span>
       </button>
       {!compact ? (
-        <p className="text-xs text-mist/80">Не навязываем лишнее. Если хватит мойки, так и скажем.</p>
+        <p className="text-xs text-mist/80">Не навязываем лишнее. Скажем, если хватит меньшего объёма.</p>
       ) : null}
     </form>
   );

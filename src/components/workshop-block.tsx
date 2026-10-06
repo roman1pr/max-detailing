@@ -10,17 +10,17 @@ export function WorkshopBlock() {
         <Reveal variant="blur">
           <h2 className="font-display text-4xl tracking-tight md:text-5xl">Мастерская</h2>
           <p className="mt-4 max-w-[52ch] text-mist">
-            Два бокса в Академке на Верности 9. Гексагональный свет для контроля ЛКП, химия на
+            Детейлинг-центр на Верности 9. Гексагональный свет для контроля ЛКП, химия на
             полках, можно ждать с кофе и смотреть, как идёт работа.
           </p>
           <dl className="mt-8 grid max-w-lg grid-cols-2 gap-6">
             <div>
-              <dt className="text-sm text-mist">Боксы</dt>
-              <dd className="font-display text-3xl text-teal">{site.boxes}</dd>
-            </div>
-            <div>
               <dt className="text-sm text-mist">Метро</dt>
               <dd className="font-display text-3xl text-teal">{site.metro}</dd>
+            </div>
+            <div>
+              <dt className="text-sm text-mist">Работаем</dt>
+              <dd className="font-display text-3xl text-teal">с {site.founded}</dd>
             </div>
           </dl>
         </Reveal>

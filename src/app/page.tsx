@@ -34,7 +34,7 @@ export default function HomePage() {
           </HeroReveal>
           <HeroReveal delay={0.18}>
             <p className="w-fit rounded-full px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-teal ring-1 ring-teal/40">
-              {site.boxes} бокса · {site.city}
+              Детейлинг центр
             </p>
           </HeroReveal>
           <HeroReveal delay={0.28} variant="blur">
@@ -44,7 +44,7 @@ export default function HomePage() {
           </HeroReveal>
           <HeroReveal delay={0.4}>
             <p className="mt-4 max-w-[38ch] text-sm leading-relaxed text-mist md:text-base">
-              Мойка, полировка, керамика и химчистка. Цена по классу авто до старта работ.
+              Цена по классу авто до старта работ.
             </p>
           </HeroReveal>
           <HeroReveal delay={0.52}>
@@ -127,7 +127,7 @@ export default function HomePage() {
           <Reveal variant="left">
             <h2 className="font-display text-4xl tracking-tight md:text-5xl">Как заезд проходит</h2>
             <p className="mt-4 max-w-[42ch] text-mist">
-              Без сюрпризов на выдаче. Если объём больше, чем казалось по фото, говорим до мойки.
+              Без сюрпризов на выдаче. Если объём больше, чем казалось по фото, говорим до старта работ.
             </p>
           </Reveal>
           <RevealGroup as="ol" className="grid gap-6" stagger={0.12}>

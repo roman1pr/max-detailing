@@ -93,113 +93,6 @@ const same = (n: number): [number, number, number, number] => [n, n, n, n];
 
 export const priceCategories: PriceCategory[] = [
   {
-    id: "regular",
-    slug: "moyka",
-    name: "Регулярные мойки",
-    icon: "drop",
-    cover: "/media/poster-wash.jpg",
-    services: [
-      {
-        id: "r1",
-        name: "Трехфазная мойка",
-        description:
-          "Бесконтакт, ручная мойка малощелочным шампунем, Nano-воск.",
-        icon: "drop",
-        prices: row([1300, 1400, 1500, 1700], [60, 60, 80, 90]),
-      },
-      {
-        id: "r2",
-        name: "Трехфазная мойка с кислотным шампунем",
-        description: "Бесконтакт, кислотный шампунь, Nano-воск.",
-        icon: "drop",
-        prices: row([1400, 1500, 1600, 1800], same(60)),
-      },
-      {
-        id: "r3",
-        name: "Трехфазная мойка с турбосушкой",
-        icon: "wind",
-        prices: row([1700, 1800, 1900, 2100], same(70)),
-      },
-      {
-        id: "r4",
-        name: "Мойка с кварцевым покрытием кузова",
-        description: "Двухфазная мойка, обезжиривание, кварц Mizu, чернение резины.",
-        icon: "shield",
-        prices: row([3000, 3400, 3500, 3800], [90, 90, 100, 100]),
-      },
-    ],
-  },
-  {
-    id: "complex",
-    slug: "kompleks",
-    name: "Комплексные мойки",
-    icon: "sparkle",
-    cover: "/media/hero-studio.jpg",
-    services: [
-      {
-        id: "k1",
-        name: "Трехфазная мойка Lux",
-        description:
-          "Коврики, пылесос салона, пластик, стёкла, чернение резины.",
-        icon: "sparkle",
-        prices: row([2300, 2400, 2500, 2900], same(90)),
-      },
-      {
-        id: "k2",
-        name: "Premium",
-        description: "Lux плюс обезжиривание кузова и уборка багажника.",
-        icon: "sparkle",
-        prices: row([3200, 3300, 3400, 4000], same(100)),
-      },
-      {
-        id: "k3",
-        name: "Комплексная мойка с кварцевым покрытием",
-        description: "Кварц на кузов, полная уборка салона и багажника.",
-        icon: "shield",
-        prices: row([4400, 4800, 5000, 5500], same(120)),
-      },
-      {
-        id: "k4",
-        name: "Detailing мойка",
-        description:
-          "Битум, железные вкрапления, колёса, наконечник глушителя, багажник, пластик, стёкла, педали.",
-        icon: "spray",
-        prices: row([4100, 4300, 4500, 4800], [220, 230, 250, 279]),
-      },
-      {
-        id: "k5",
-        name: "Detailing Pro мойка",
-        description: "Detailing мойка, кварц, мойка двигателя, салон.",
-        icon: "spray",
-        isFrom: true,
-        prices: row([6300, 6600, 6900, 7300], [220, 220, 250, 269]),
-      },
-    ],
-  },
-  {
-    id: "film",
-    slug: "plyonka",
-    name: "Мойки для машин в плёнке",
-    icon: "shield",
-    cover: "/media/poster-ppf.jpg",
-    services: [
-      {
-        id: "f1",
-        name: "Двухфазная мойка",
-        description: "Бесконтакт и ручная мойка шампунем для плёнок.",
-        icon: "shield",
-        prices: row([1300, 1400, 1500, 1700], same(50)),
-      },
-      {
-        id: "f2",
-        name: "Трехфазная мойка",
-        description: "Шампунь для плёнок плюс Nano-воск.",
-        icon: "shield",
-        prices: row([1400, 1500, 1600, 1800], same(60)),
-      },
-    ],
-  },
-  {
     id: "extra",
     slug: "dop",
     name: "Дополнительные услуги",
@@ -229,12 +122,6 @@ export const priceCategories: PriceCategory[] = [
         name: "Удаление металлических вкраплений (весь автомобиль)",
         icon: "wrench",
         prices: row([2000, 2100, 2300, 2800], same(90)),
-      },
-      {
-        id: "e5",
-        name: "Detailing мойка двигателя с консервантом",
-        icon: "engine",
-        prices: row(same(2500), [70, 70, 80, 79]),
       },
       {
         id: "e6",
@@ -486,7 +373,7 @@ export function priceForClass(service: PriceService, classId: string): ClassPric
 }
 
 export function featuredHomePrices() {
-  const ids = ["k4", "p3", "c1", "p4", "r4", "p1", "k5", "e9"];
+  const ids = ["p3", "p4", "p1", "c1", "e15", "e16", "p2", "e9"];
   const found: { category: PriceCategory; service: PriceService }[] = [];
   for (const id of ids) {
     for (const category of priceCategories) {

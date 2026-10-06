@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "О нас",
-  description: "MAXДЕТЕЙЛИНГ в Академке: два бокса, прайс по классу авто, химия с именами.",
+  description: "Детейлинг-центр MAXДЕТЕЙЛИНГ: прайс по классу авто, химия с именами.",
 };
 
 export default function AboutPage() {
@@ -14,8 +14,8 @@ export default function AboutPage() {
       <div className="wrap">
         <h1 className="font-display text-4xl tracking-tight md:text-6xl">О детейлинг-центре</h1>
         <p className="mt-6 max-w-[60ch] text-mist">
-          MAXДЕТЕЙЛИНГ работает в Академке, у метро Академическая. Два бокса: мойка, кузов и салон.
-          Прайс, который видите на сайте, тот же, что в кассе CRM.
+          MAXДЕТЕЙЛИНГ — детейлинг-центр у метро Академическая. Полировка, керамика и химчистка
+          салона. Прайс, который видите на сайте, тот же, что в кассе CRM.
         </p>
         <p className="mt-4 max-w-[60ch] text-mist">
           Берём Polo и Prado по одному регламенту. Разница только в классе и состоянии, не в

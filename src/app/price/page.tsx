@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 export const metadata: Metadata = {
   title: "Прайс-лист",
   description:
-    "Цены MAXДЕТЕЙЛИНГ по классу авто: мойка, полировка, керамика, химчистка. Прайс с продакшена CRM.",
+    "Цены MAXДЕТЕЙЛИНГ по классу авто: полировка, керамика, химчистка. Прайс с продакшена CRM.",
 };
 
 export default function PricePage() {

@@ -8,24 +8,9 @@ import { RevealGroup, RevealItem } from "@/components/reveal";
 import { ServiceIcon } from "@/components/service-icon";
 
 const copy: Record<string, { kicker: string; text: string; days: string }> = {
-  moyka: {
-    kicker: "1-4 часа",
-    text: "От трехфазной до Detailing Pro. Кузов, диски, если нужно салон.",
-    days: "в день обращения",
-  },
-  kompleks: {
-    kicker: "2-5 часов",
-    text: "Мойка плюс салон, кварц, двигатель. Один заезд, один регламент.",
-    days: "в день обращения",
-  },
-  plyonka: {
-    kicker: "50-60 мин",
-    text: "Отдельный шампунь, чтобы не убить клей и гидрофоб плёнки.",
-    days: "в день обращения",
-  },
   dop: {
     kicker: "от 10 мин",
-    text: "Битум, вкрапления, антидождь, воск, диски. Добавляем к мойке.",
+    text: "Битум, вкрапления, антидождь, воск, диски. Добавляем к основной работе.",
     days: "к основной услуге",
   },
   polirovka: {
@@ -69,7 +54,7 @@ export function ServiceCatalog() {
                   </span>
                 </span>
               </div>
-              {i === 0 || i === 4 ? (
+              {cat.slug === "polirovka" || cat.slug === "himchistka" ? (
                 <div className="relative -mx-5 -mb-5 aspect-[16/7] overflow-hidden rounded-b-[1.6rem] md:col-span-3 md:mx-0 md:mb-0 md:mt-2 md:rounded-[1.2rem]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={cat.cover} alt="" className="h-full w-full object-cover" />

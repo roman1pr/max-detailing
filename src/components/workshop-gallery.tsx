@@ -30,24 +30,26 @@ export function WorkshopGallery({ className = "" }: Props) {
   const labelId = useId();
   const [open, setOpen] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [fullReady, setFullReady] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    setFullReady(false);
+  }, [open]);
+
   const indexOf = (id: StudioShot["id"]) => ORDER.indexOf(id);
 
   const close = useCallback(() => setOpen(null), []);
 
-  const step = useCallback(
-    (dir: 1 | -1) => {
-      setOpen((current) => {
-        if (current === null) return current;
-        return (current + dir + ORDER.length) % ORDER.length;
-      });
-    },
-    [],
-  );
+  const step = useCallback((dir: 1 | -1) => {
+    setOpen((current) => {
+      if (current === null) return current;
+      return (current + dir + ORDER.length) % ORDER.length;
+    });
+  }, []);
 
   useEffect(() => {
     if (open === null) return;
@@ -73,6 +75,7 @@ export function WorkshopGallery({ className = "" }: Props) {
           shot={shotById("hex")}
           className="aspect-[4/3] md:aspect-[16/9]"
           sizes="(max-width: 1400px) 100vw, 1400px"
+          priority
           onOpen={() => setOpen(indexOf("hex"))}
         />
       </Reveal>
@@ -156,14 +159,29 @@ export function WorkshopGallery({ className = "" }: Props) {
                       aria-label="Закрыть фото"
                     >
                       <Image
-                        key={active.id}
+                        key={`${active.id}-thumb`}
+                        src={active.thumb}
+                        alt=""
+                        fill
+                        sizes="100vw"
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL={active.blurDataURL}
+                        className="pointer-events-none object-contain"
+                        aria-hidden
+                      />
+                      <Image
+                        key={`${active.id}-full`}
                         src={active.src}
                         alt={active.alt}
                         fill
                         priority
                         sizes="100vw"
                         quality={90}
-                        className="pointer-events-none object-contain"
+                        onLoad={() => setFullReady(true)}
+                        className={`pointer-events-none object-contain transition-opacity duration-500 ${
+                          fullReady ? "opacity-100" : "opacity-0"
+                        }`}
                       />
                     </button>
                     <button
@@ -190,11 +208,13 @@ function Tile({
   className,
   sizes,
   onOpen,
+  priority = false,
 }: {
   shot: StudioShot;
   className: string;
   sizes: string;
   onOpen: () => void;
+  priority?: boolean;
 }) {
   return (
     <div
@@ -207,11 +227,14 @@ function Tile({
         aria-label={`Открыть: ${shot.label}`}
       >
         <Image
-          src={shot.src}
+          src={shot.thumb}
           alt={shot.alt}
           fill
           sizes={sizes}
-          quality={90}
+          quality={75}
+          priority={priority}
+          placeholder="blur"
+          blurDataURL={shot.blurDataURL}
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.045] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
         <span className="pointer-events-none absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/12" />

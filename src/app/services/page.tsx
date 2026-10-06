@@ -3,7 +3,7 @@ import { ServiceCatalog } from "@/components/service-catalog";
 
 export const metadata: Metadata = {
   title: "Услуги",
-  description: "Мойка, комплекс, полировка, керамика, химчистка и доп. работы MAXДЕТЕЙЛИНГ.",
+  description: "Полировка, керамика, химчистка и дополнительные работы MAXДЕТЕЙЛИНГ.",
 };
 
 export default function ServicesPage() {

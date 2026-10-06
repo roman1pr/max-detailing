@@ -22,7 +22,7 @@ const unbounded = Unbounded({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.legalName} в Академке`,
+    default: `Детейлинг центр | ${site.legalName}`,
     template: `%s | ${site.legalName}`,
   },
   description: site.description,

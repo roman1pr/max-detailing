@@ -4,7 +4,7 @@ import { LeadForm } from "@/components/lead-form";
 
 export const metadata: Metadata = {
   title: "Отзывы",
-  description: "Отзывы клиентов MAXДЕТЕЙЛИНГ в Академке.",
+  description: "Отзывы клиентов детейлинг-центра MAXДЕТЕЙЛИНГ.",
 };
 
 export default function ReviewsPage() {

@@ -5,7 +5,7 @@ import { Reveal } from "@/components/reveal";
 
 export const metadata: Metadata = {
   title: "Портфолио",
-  description: "Примеры работ MAXДЕТЕЙЛИНГ по услугам: мойка, полировка, керамика, химчистка.",
+  description: "Примеры работ MAXДЕТЕЙЛИНГ: полировка, керамика, химчистка.",
 };
 
 type Props = { searchParams: Promise<{ service?: string }> };

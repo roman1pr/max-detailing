@@ -4,7 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Обучение",
-  description: "Стажировка и работа в MAXДЕТЕЙЛИНГ, Академка.",
+  description: "Стажировка и работа в детейлинг-центре MAXДЕТЕЙЛИНГ.",
 };
 
 export default function TrainingPage() {
@@ -14,7 +14,8 @@ export default function TrainingPage() {
         <div>
           <h1 className="font-display text-4xl tracking-tight md:text-6xl">Обучение и работа</h1>
           <p className="mt-4 max-w-[50ch] text-mist">
-            Ищем людей на мойку и салон. Учим регламенту, химии и классам авто. Студия в Академке,
+            Ищем людей на кузов и салон. Учим регламенту, химии и классам авто. Детейлинг-центр у метро
+            Академическая,
             {` ${site.hours.toLowerCase()}.`}
           </p>
           <ul className="mt-8 grid gap-3 text-mist">
